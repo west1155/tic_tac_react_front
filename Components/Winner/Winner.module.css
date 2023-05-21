@@ -1,0 +1,16 @@
+
+.winner {
+    width: 510px;
+    height: 10vh;
+    position: absolute;
+    left: 21vh;
+    top: 90vh;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid black;
+}
+
+.button {
+    margin-left: 10px;
+}
+

@@ -1,0 +1,14 @@
+
+.App {
+    background-color: lightgrey;
+    height: 100vh;
+}
+
+
+.history {
+    position: absolute;
+    top: 35vh;
+    right: 25vh;
+    color: white;
+    background-color: black;
+}
