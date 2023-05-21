@@ -1,7 +1,7 @@
 import React from "react";
 import Board from "./Components/Board/Board";
 import s from './App.module.css'
-import History from "./Components/History/History";
+import reportWebVitals from './reportWebVitals';
 
 
 const App = (props) => {
