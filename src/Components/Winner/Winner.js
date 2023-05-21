@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {generateBoard} from "../../Reducers/game_logic";
+import {generateBoard} from "../../../Reducers/game_logic";
 import s from './Winner.module.css'
 
 
