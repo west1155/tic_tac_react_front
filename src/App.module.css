@@ -1,14 +1,31 @@
 
+.h1 {
+    grid-column: 1/4;
+    margin: 10vh;
+    text-align: center;
+    background-color: mediumaquamarine;
+}
+
+.board {
+    margin: 10vh;
+    grid-column: 1/3;
+    background-color: lightblue;
+
+}
+.history {
+    margin: 10vh;
+    background-color: red;
+    justify-content: center;
+}
+
 .App {
     background-color: lightgrey;
     height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 
-.history {
-    position: absolute;
-    top: 35vh;
-    right: 25vh;
-    color: white;
-    background-color: black;
-}
+
+
+

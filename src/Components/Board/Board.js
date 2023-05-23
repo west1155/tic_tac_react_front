@@ -23,7 +23,6 @@ class Board extends Component {
     render() {
 
         return <div>
-            <h1 className={s.h1}> TIC-TAC-TOE</h1>
             <div className={s.board_container}>
                 {this.props.board.map((item, index) => <Square
                     setSquareValue={this.props.setSquareValue}
