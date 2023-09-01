@@ -32,6 +32,7 @@ class Board extends Component {
                     squareValue={item}
                     XO_changer={XO_changer(this.props.playerOn)}
                     changePlayer={this.props.changePlayer}
+                    playerOn={this.props.playerOn}
                 >
                 </Square>)}
 
@@ -48,6 +49,8 @@ class Board extends Component {
     }
 }
 
+
+// Generates first turn (X or O)
 function generate_XO() {
     const alphabet = "XO"
     return alphabet[Math.floor(Math.random() * alphabet.length)]

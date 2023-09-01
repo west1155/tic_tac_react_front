@@ -7,7 +7,7 @@ const App = (props) => {
     return <div className={s.App}>
         <h1 className={s.h1}> TIC-TAC-TOE</h1>
         <div className={s.board}><Board/></div>
-        <div className={s.history}><History /></div>
+        <div className={s.history}><History/></div>
     </div>
 
 }

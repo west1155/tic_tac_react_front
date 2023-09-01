@@ -1,4 +1,6 @@
-const CREATE_BOARD = 'CREATE_BOARD';
+import square from "../Components/Square/Square";
+
+const CREATE_BOARD = 'CREATE_BOARD'
 const SET_ITEM_VALUE = 'SET_ITEM_VALUE'
 const CHANGE_PLAYER = 'CHANGE_PLAYER'
 const SET_WINNER = 'SET_WINNER'
@@ -8,6 +10,7 @@ const initialState = {
     isLoaded: false,
     board: [],
     cellCounter: 0,
+    history: []
 }
 
 
@@ -32,7 +35,11 @@ const gameReducer = (state = initialState, action) => {
             return {
                 ...state,
                 board: state.board.map((item, index) => {
-                    if (index === action.squareIndex && !item) return (item = state.playerOn)
+                    if (index === action.squareIndex && !item) {
+                        return (item = state.playerOn)
+
+                    }
+
                     return item
                 })
 
@@ -58,6 +65,8 @@ export const changePlayer = (playerOn) => ({type: CHANGE_PLAYER, playerOn})
 
 export const setWinner = (winner) => ({type: SET_WINNER, winner})
 export const setSquareValue = (squareIndex) => ({type: SET_ITEM_VALUE, squareIndex});
+
+
 export default gameReducer
 
 

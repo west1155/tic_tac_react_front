@@ -1,26 +1,21 @@
 import s from './History.module.css'
+import React from "react";
+import { useSelector } from 'react-redux';
 
 
-const History = (state) => {
-    let history = []
-    history[1] = "1cvnv"
-    history[2] = "3nvchm b"
-    history[3] = "4nbvmnbm"
-    history[4] = "5nmvbnm"
-    history[5] = "6mnvbnm"
-    history[6] = "7nmbvmbnv"
 
-    history[7] = "8"
+const History = () => {
 
+    const state = useSelector(state => state)
+    const history = useSelector((state) => state.gamePage.history)
 
 
     return <div className={s.outputBar}>
+        {history.map((item, index) => (<p key={index}>{item}</p>))}
 
-
-        {history.map((item, index) => (
-            <p key={index}>{item}</p>
-        ))}
     </div>
 }
+
+
 
 export default History
