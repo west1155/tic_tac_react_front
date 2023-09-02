@@ -8,11 +8,13 @@ import s from './Board.module.css'
 
 class Board extends Component {
 
-
+    // Generates board 
     componentDidMount() {
         this.props.generateBoard([...Array(9)], generate_XO())
     }
-
+    
+    
+    // Redraws the board after the step is done
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.board !== this.props.board) {
             this.props.setWinner(checkWinner(this.props.board))
@@ -38,8 +40,6 @@ class Board extends Component {
 
 
             </div>
-
-            {/*<Test XO_changer={XO_changer(this.props.playerOn)}/>*/}
             {(this.props.winnerState === 'X' || this.props.winnerState ==='O' || this.props.winnerState==='DRAW') ?
             <WinnerSection winner={this.props.winnerState} generate_XO={generate_XO()}/>
             : null}
@@ -58,11 +58,14 @@ function generate_XO() {
 
 
 
-
+// Changes X to O or other way
 function XO_changer(XO) {
     return (XO === 'X') ? XO = 'O' : XO = 'X'
 }
 
+
+
+// Checks the winner
 function checkWinner(board) {
     let winner = undefined
 
@@ -79,16 +82,20 @@ function checkWinner(board) {
 }
 
 
+
+// Variables from state game-logic.js
 const mapStateToProps = (state) => {
     return {
         board: state.gamePage.board,
         cellCounter: state.gamePage.cellCounter,
         playerOn: state.gamePage.playerOn,
-        winnerState: state.gamePage.winner
+        winnerState: state.gamePage.winner,
     }
 }
 
 
+
+// Methods from state
 const mapDispatchToProps = (dispatch) => {
     return {
         changePlayer: (player) => {dispatch(changePlayer(player))},
@@ -97,6 +104,8 @@ const mapDispatchToProps = (dispatch) => {
         setWinner: (winner) => {dispatch(setWinner(winner))}
     }
 }
+
+
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board)

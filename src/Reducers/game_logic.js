@@ -1,4 +1,4 @@
-import square from "../Components/Square/Square";
+
 
 const CREATE_BOARD = 'CREATE_BOARD'
 const SET_ITEM_VALUE = 'SET_ITEM_VALUE'
@@ -22,6 +22,7 @@ const gameReducer = (state = initialState, action) => {
                 board: action.board,
                 playerOn: action.playerOn,
                 cellCounter: action.cellCounter,
+                history: [],
                 winner: null,
                 isLoaded: true
             }

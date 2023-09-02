@@ -5,8 +5,12 @@ import { useSelector } from 'react-redux';
 
 
 const Square = (props) => {
-
+    
+    // selects history from state
     const history = useSelector((state) => state.gamePage.history)
+    
+    
+    // Methods to make step (X or O)
     let onButtonClick = () => {
         props.setSquareValue(props.squareIndex);
         props.changePlayer(props.XO_changer);
